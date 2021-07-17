@@ -12,21 +12,26 @@ curl https://nssdc.gsfc.nasa.gov/planetary/sound/apollo_13_problem.wav -o apollo
 import busio
 import digitalio
 import board
+
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
+
 from gpiozero import MotionSensor, LED
+
 from signal import pause
 import time
+
 from supercollider import Server, Synth, Buffer
+
 import os
 from os import listdir
 from os.path import isfile, join
+
 # generate random integer values
 from random import seed
 from random import randint
 import argparse
 import random
-import time
 
 from pythonosc import udp_client
 from pythonosc import osc_message_builder
@@ -36,6 +41,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--ip", default="127.0.0.1", help="The ip of the OSC server")
 parser.add_argument("--port", type=int, default=57120, help="The port the OSC server is listening on")
 args = parser.parse_args()
+
+
 # seed random number generator
 seed(1)
 
